@@ -1,0 +1,50 @@
+<nb-layout>
+    <nb-layout-header fixed>
+       <img src="" height="50px" width="150px" style="align-self: flex-start;">
+       <button outline nbButton [nbContextMenu]="items" style="margin-left: 1050px;">
+        Show Menu</button>
+    </nb-layout-header>
+    
+    <nb-sidebar>
+      <nb-menu [items]="coll">
+      </nb-menu>
+    </nb-sidebar>
+  
+    <nb-layout-column class="colored-column-basic">
+      <nb-card  >
+        <nb-card-header>Test Suit Overview</nb-card-header>
+        <nb-card-body>
+      <ngx-charts-bar-vertical
+              [view]="view"
+              [scheme]="colorScheme"
+              [results]="single"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="showLegend"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel"
+              >
+              </ngx-charts-bar-vertical>
+            </nb-card-body>
+      </nb-card>
+      <nb-card >
+        <nb-card-header>My Execution</nb-card-header>
+        <nb-card-body>
+      <ngx-charts-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [legend]="showLegend"
+      [explodeSlices]="explodeSlices"
+      [labels]="showLabels"
+      [doughnut]="doughnut"
+      [gradient]="gradient"
+              >
+              </ngx-charts-pie-chart>
+            </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
